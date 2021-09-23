@@ -19,7 +19,7 @@ import lombok.Getter;
 @Getter
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public class BaseEntity {
+public class BaseTimeEntity {
  
     // @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)

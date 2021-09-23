@@ -1,25 +1,31 @@
 package com.webproject.web_miniproject.service;
 
-import javax.transaction.Transactional;
+
+
+import java.util.List;
 
 import com.webproject.web_miniproject.domain.Board;
-import com.webproject.web_miniproject.repository.BoardRepository;
+import com.webproject.web_miniproject.dto.BoardDto;
 
-import org.springframework.stereotype.Service;
 
-@Service
-public class BoardService {
+public interface BoardService {
     
-    private final BoardRepository boardRepository;
 
-    public BoardService(BoardRepository boardRepository) {
-        this.boardRepository = boardRepository;
-    }
+    // 저장
+    public Board save(Board board);
+    
 
-    @Transactional
-    public Board save(Board board) {
-        return boardRepository.save(board);
-    }
+    // 게시글 전체 조회
+    public List<Board> findAll();
+
+    // 삭제
+    public void delete(Long id);
+
+    // 수정
+    public void update(Long id);
+    
+    // 게시글 상세 조회
+    public BoardDto findById(Long id);
     
 
 }
